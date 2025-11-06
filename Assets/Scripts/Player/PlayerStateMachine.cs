@@ -7,6 +7,7 @@ public enum PlayerState
     Idle,
     Walking,
     Running,
+    Jumping,
 
     FirstAttack,
     SecondAttack,
@@ -32,6 +33,7 @@ public class PlayerStateMachine : MonoBehaviour
         m_stateByKey.Add(PlayerState.Idle, new PlayerIdle(this, null));
         m_stateByKey.Add(PlayerState.Walking, new PlayerWalking(this, m_behaiviourInfos[(int)PlayerState.Walking]));
         m_stateByKey.Add(PlayerState.Running, new PlayerRunning(this, m_behaiviourInfos[(int)PlayerState.Running]));
+        m_stateByKey.Add(PlayerState.Jumping, new PlayerJumping(this, null));
         m_stateByKey.Add(PlayerState.FirstAttack, new PlayerFirstAttack(this, m_behaiviourInfos[(int)PlayerState.FirstAttack]));
         m_stateByKey.Add(PlayerState.SecondAttack, new PlayerSecondAttack(this, m_behaiviourInfos[(int)PlayerState.SecondAttack]));
         m_stateByKey.Add(PlayerState.ThirdAttack, new PlayerThirdAttack(this, m_behaiviourInfos[(int)PlayerState.ThirdAttack]));

@@ -24,8 +24,13 @@ public class PlayerThirdAttack : PlayerStateBase
                 PlayerStateMachine.ChangeState(PlayerState.Running);
             }
 
+            if (Input.GetButtonDown("Jump"))
+            {
+                PlayerMovement.Jump();
+            }
+
             if (m_waitingTime >= m_info.ComboWaitingTime)
-                PlayerStateMachine.ChangeState(PlayerState.Walking);
+                PlayerStateMachine.ChangeState(PlayerState.Idle);
         }
     }
 

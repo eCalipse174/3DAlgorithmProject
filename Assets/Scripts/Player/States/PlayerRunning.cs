@@ -10,9 +10,9 @@ public class PlayerRunning : PlayerStateBase
     public override void Enter()
     {
         PlayerMovement.SetIsAttacking(false);
+        PlayerMovement.SetIsRunning(true);
         //しいけしさ
         PlayerAnimator.SetBool(PlayerState.Running.ToString(), true);
-        PlayerAnimator.Play(PlayerState.Running.ToString(), 0, 0);
     }
 
     public override void Update()
@@ -28,6 +28,12 @@ public class PlayerRunning : PlayerStateBase
         if (Input.GetButtonUp("Dash"))
         {
             PlayerStateMachine.ChangeState(PlayerState.Walking);
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            PlayerMovement.Jump();
+            PlayerStateMachine.ChangeState(PlayerState.Jumping);
         }
     }
 

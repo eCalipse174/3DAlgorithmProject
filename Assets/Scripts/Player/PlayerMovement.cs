@@ -31,17 +31,17 @@ public class PlayerMovement : MonoBehaviour
     private bool m_isLanding = false;
 
     private bool m_isGrounded;
+    public bool IsGrounded => m_isGrounded;
+
     private bool m_isAttacking;
 
     //private CharacterController m_characterController;
     private PlayerCamera m_playerCamera;
-    private Animator m_animator;
     private Rigidbody m_rigidbody;
 
     private void Start()
     {
         m_playerCamera = GetComponent<PlayerCamera>();
-        m_animator = GameObject.Find("KayinTest").GetComponent<Animator>();
         m_rigidbody = GetComponent<Rigidbody>();
         m_moveSpeed = m_walkSpeed;
         m_leftJumpDelay = m_jumpDelay;
@@ -55,11 +55,6 @@ public class PlayerMovement : MonoBehaviour
         m_leftDashDelay -= Time.deltaTime;
         m_dashSpaceDelay += Time.deltaTime;
         m_leftLandDelay -= Time.deltaTime;
-
-        if (Input.GetButtonDown("Jump") && m_isGrounded)
-        {
-            Jump();
-        }
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
@@ -94,13 +89,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Jump()
+    public void Jump()
     {
+        if (!m_isGrounded)
+            return;
+
         m_isGrounded = false;
         m_rigidbody.linearVelocity = Vector3.zero;
         m_rigidbody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
-
-        m_animator.SetTrigger("Jump");
     }
 
     //private IEnumerator DashCoroutine()

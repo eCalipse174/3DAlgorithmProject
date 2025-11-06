@@ -11,7 +11,6 @@ public class PlayerWalking : PlayerStateBase
         PlayerMovement.SetIsAttacking(false);
         //¾Ö´Ï¤Ä¤±ÀÌ¤Å¤¤¤µ
         PlayerAnimator.SetBool(PlayerState.Walking.ToString(), true);
-        PlayerAnimator.Play(PlayerState.Walking.ToString(), 0, 0);
     }
 
     public override void Update()
@@ -27,8 +26,13 @@ public class PlayerWalking : PlayerStateBase
         if (Input.GetButtonDown("Dash"))
         {
             //PlayerMovement.Dash();
-            PlayerMovement.SetIsRunning(true);
             PlayerStateMachine.ChangeState(PlayerState.Running);
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            PlayerMovement.Jump();
+            PlayerStateMachine.ChangeState(PlayerState.Jumping);
         }
     }
 
