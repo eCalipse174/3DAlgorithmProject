@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Character
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Character
+    m_Weight: 1
+  - m_Path: Character/Foot_L.IK
+    m_Weight: 1
+  - m_Path: Character/Foot_L.IK/Foot_L.IK_end
+    m_Weight: 1
+  - m_Path: Character/Foot_R.IK
+    m_Weight: 1
+  - m_Path: Character/Foot_R.IK/Foot_R.IK_end
+    m_Weight: 1
+  - m_Path: Character/Leg01_L
+    m_Weight: 1
+  - m_Path: Character/Leg01_L/Leg02_L
+    m_Weight: 1
+  - m_Path: Character/Leg01_L/Leg02_L/Foot_L
+    m_Weight: 1
+  - m_Path: Character/Leg01_L/Leg02_L/Foot_L/Toe_L
+    m_Weight: 1
+  - m_Path: Character/Leg01_L/Leg02_L/Foot_L/Toe_L/Toe_L_end
+    m_Weight: 1
+  - m_Path: Character/Leg01_R
+    m_Weight: 1
+  - m_Path: Character/Leg01_R/Leg02_R
+    m_Weight: 1
+  - m_Path: Character/Leg01_R/Leg02_R/Foot_R
+    m_Weight: 1
+  - m_Path: Character/Leg01_R/Leg02_R/Foot_R/Toe_R
+    m_Weight: 1
+  - m_Path: Character/Leg01_R/Leg02_R/Foot_R/Toe_R/Toe_R_end
+    m_Weight: 1
+  - m_Path: Character/Spine01
+    m_Weight: 1
+  - m_Path: Character/Spine01/LegPole_L
+    m_Weight: 1
+  - m_Path: Character/Spine01/LegPole_L/LegPole_L_end
+    m_Weight: 1
+  - m_Path: Character/Spine01/LegPole_R
+    m_Weight: 1
+  - m_Path: Character/Spine01/LegPole_R/LegPole_R_end
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03/Spine04
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03/Spine04/Neck
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03/Spine04/Neck/Head
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03/Spine04/Neck/Head/Head_end
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03/Spine04/Shoulder_L
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03/Spine04/Shoulder_L/UpperArm_L
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03/Spine04/Shoulder_L/UpperArm_L/ForeArm_L
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03/Spine04/Shoulder_L/UpperArm_L/ForeArm_L/Wrist_L
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03/Spine04/Shoulder_L/UpperArm_L/ForeArm_L/Wrist_L/Hand01_L
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03/Spine04/Shoulder_L/UpperArm_L/ForeArm_L/Wrist_L/Hand01_L/Hand02_L
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03/Spine04/Shoulder_L/UpperArm_L/ForeArm_L/Wrist_L/Hand01_L/Hand02_L/Hand03_L
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03/Spine04/Shoulder_L/UpperArm_L/ForeArm_L/Wrist_L/Hand01_L/Hand02_L/Hand03_L/Hand03_L_end
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03/Spine04/Shoulder_R
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03/Spine04/Shoulder_R/UpperArm_R
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03/Spine04/Shoulder_R/UpperArm_R/ForeArm_R
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03/Spine04/Shoulder_R/UpperArm_R/ForeArm_R/Wrist_R
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03/Spine04/Shoulder_R/UpperArm_R/ForeArm_R/Wrist_R/Hand01_R
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03/Spine04/Shoulder_R/UpperArm_R/ForeArm_R/Wrist_R/Hand01_R/Hand02_R
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03/Spine04/Shoulder_R/UpperArm_R/ForeArm_R/Wrist_R/Hand01_R/Hand02_R/Hand03_R
+    m_Weight: 1
+  - m_Path: Character/Spine01/Spine02/Spine03/Spine04/Shoulder_R/UpperArm_R/ForeArm_R/Wrist_R/Hand01_R/Hand02_R/Hand03_R/Hand03_R_end
+    m_Weight: 1
+  - m_Path: Cube
+    m_Weight: 0
+  - m_Path: Cube.001
+    m_Weight: 0
+  - m_Path: Weapon
+    m_Weight: 0
+  - m_Path: Weapon/Bone
+    m_Weight: 1
+  - m_Path: Weapon/Bone/Bone_end
+    m_Weight: 1

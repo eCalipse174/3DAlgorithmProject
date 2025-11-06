@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1574ff947575e448d62a88c5d31e5d, type: 3}
+  m_Name: FirstAttack
+  m_EditorClassIdentifier: 
+  movingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -0.009994507
+      inSlope: 0.07386733
+      outSlope: 0.07386733
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.29969963
+    - serializedVersion: 3
+      time: 0.42381576
+      value: 0.06473495
+      inSlope: 0.5650069
+      outSlope: 0.5650069
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.8434773
+    - serializedVersion: 3
+      time: 0.533885
+      value: 0.9555682
+      inSlope: 0.35393116
+      outSlope: 0.35393116
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.37255177
+      outWeight: 0.22316967
+    - serializedVersion: 3
+      time: 0.9960327
+      value: 0.9900017
+      inSlope: 0.02809494
+      outSlope: 0.02809494
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.08101967
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  distance: 0.65
+  comboWaitingTime: 0.7875
+  stopTime: 0.4375
