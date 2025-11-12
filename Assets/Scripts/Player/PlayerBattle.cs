@@ -1,18 +1,33 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBattle : MonoBehaviour, ICoroutineHost
 {
-    
+    private Dictionary<PlayerState, Transform> m_hitTransforms;
 
-    public void Hit(BehaviourInfo pInfo, int pHitIndex, Transform pTrans)
+    private void Start()
+    {
+        m_hitTransforms = new Dictionary<PlayerState, Transform>();
+        m_hitTransforms.Add(PlayerState.FirstAttack, GameObject.Find(PlayerState.FirstAttack.ToString() + "Transform").transform);
+        m_hitTransforms.Add(PlayerState.SecondAttack, GameObject.Find(PlayerState.SecondAttack.ToString() + "Transform").transform);
+        m_hitTransforms.Add(PlayerState.ThirdAttack, GameObject.Find(PlayerState.ThirdAttack.ToString() + "Transform").transform);
+
+        m_hitTransforms.Add(PlayerState.FirstSkill, GameObject.Find(PlayerState.FirstSkill.ToString() + "Transform").transform);
+    }
+
+    public void Hit(BehaviourInfo pInfo, int pHitIndex)
     {
         Collider[] hits;
+        Transform trans = m_hitTransforms[pInfo.State];
 
-
-        hits = Physics.OverlapSphere(pTrans.position, pInfo.AreaRadius);
+        hits = Physics.OverlapSphere(trans.position, pInfo.AreaRadius);
         foreach (var hit in hits)
         {
             // 에너미 때리기
+            if (hit.CompareTag("Enemy"))
+            {
+                Debug.Log($"{hit.name}에게 {pInfo.Hits[pHitIndex]} 데미지!");
+            }
         }
     }
 }

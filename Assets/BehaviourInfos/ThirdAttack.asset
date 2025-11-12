@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ba5d8ee85d036f4ab5ff988ee7ffb61, type: 3}
   m_Name: ThirdAttack
   m_EditorClassIdentifier: Assembly-CSharp::BehaviourInfo
+  m_state: 6
   movingCurve:
     serializedVersion: 2
     m_Curve:
@@ -57,6 +58,6 @@ MonoBehaviour:
   distance: 1
   comboWaitingTime: 0
   stopTime: 1.1
-  areaRadius: 0
+  areaRadius: 4
   effectDelay: 0.3
-  hits: 
+  hits: c8000000c8000000

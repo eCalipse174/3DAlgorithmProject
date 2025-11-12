@@ -4,6 +4,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BehaviourInfo", menuName = "Scriptable Objects/BehaviourInfo")]
 public class BehaviourInfo : ScriptableObject
 {
+    [SerializeField] private PlayerState m_state;
+
+    [Space]
     [Header("Character Move")]
 
     [SerializeField] private AnimationCurve movingCurve;
@@ -19,6 +22,9 @@ public class BehaviourInfo : ScriptableObject
     [SerializeField] private float areaRadius;
     [SerializeField] private float effectDelay;
     [SerializeField] private List<int> hits;
+
+
+    public PlayerState State => m_state;
 
     public AnimationCurve MovingCurve => movingCurve;
     /// <summary>

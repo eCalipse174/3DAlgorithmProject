@@ -56,7 +56,7 @@ public class PlayerStateMachine : MonoBehaviour
         if (pState == CurrentState)
             return;
 
-        Debug.Log($"State Changed: {m_currentState} => {pState}");
+        //Debug.Log($"State Changed: {m_currentState} => {pState}");
         m_currentState = pState;
         m_stateMachine.ChangeState(m_stateByKey[m_currentState]);
     }

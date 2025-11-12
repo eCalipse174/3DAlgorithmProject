@@ -26,9 +26,6 @@ public class PlayerStateBase : IState
     /// </summary>
     protected float m_waitingTime;
 
-    private TestVFX testVFX;
-    protected TestVFX TestVFX => testVFX;
-
     public PlayerStateBase(PlayerStateMachine pStateMachine, BehaviourInfo pInfo)
     {
         m_playerStateMachine = pStateMachine;
@@ -39,8 +36,6 @@ public class PlayerStateBase : IState
 
         m_playerAnimator = GameObject.Find("KayinTest").GetComponent<Animator>();
         m_info = pInfo;
-
-        testVFX = pStateMachine.GetComponent<TestVFX>();
     }
 
     public virtual void Enter() { }

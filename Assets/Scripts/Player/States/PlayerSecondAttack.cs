@@ -63,5 +63,6 @@ public class PlayerSecondAttack : PlayerStateBase
 
         yield return new WaitForSeconds(m_info.EffectDelay);
         PlayerEffects.PlayEffect(PlayerState.SecondAttack);
+        PlayerBattle.Hit(m_info, 0);
     }
 }

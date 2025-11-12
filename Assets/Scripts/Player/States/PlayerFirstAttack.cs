@@ -64,5 +64,6 @@ public class PlayerFirstAttack : PlayerStateBase
 
         yield return new WaitForSeconds(m_info.EffectDelay);
         PlayerEffects.PlayEffect(PlayerState.FirstAttack);
+        PlayerBattle.Hit(m_info, 0);
     }
 }

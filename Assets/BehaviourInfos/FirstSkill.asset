@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ba5d8ee85d036f4ab5ff988ee7ffb61, type: 3}
   m_Name: FirstSkill
   m_EditorClassIdentifier: Assembly-CSharp::BehaviourInfo
+  m_state: 7
   movingCurve:
     serializedVersion: 2
     m_Curve: []
@@ -21,6 +22,6 @@ MonoBehaviour:
   distance: 0
   comboWaitingTime: 0
   stopTime: 1.042
-  areaRadius: 0
-  effectDelay: 0.35
-  hits: 
+  areaRadius: 7
+  effectDelay: 0.3
+  hits: f4010000

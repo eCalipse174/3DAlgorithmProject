@@ -58,5 +58,9 @@ public class PlayerThirdAttack : PlayerStateBase
 
         yield return new WaitForSeconds(m_info.EffectDelay);
         PlayerEffects.PlayEffect(PlayerState.ThirdAttack);
+        PlayerBattle.Hit(m_info, 0);
+
+        yield return new WaitForSeconds(0.15f);
+        PlayerBattle.Hit(m_info, 1);
     }
 }

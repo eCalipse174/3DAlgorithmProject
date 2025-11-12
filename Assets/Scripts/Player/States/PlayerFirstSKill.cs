@@ -36,6 +36,7 @@ public class PlayerFirstSkill : PlayerStateBase
         yield return new WaitForSeconds(m_info.EffectDelay);
         PlayerBattle.StartCoroutine(PlayerCamera.Shake(0.4f, 0.3f));
         PlayerEffects.PlayEffect(PlayerState.FirstSkill);
+        PlayerBattle.Hit(m_info, 0);
 
         yield return new WaitForSeconds(m_info.StopTime - m_info.EffectDelay);
         PlayerStateMachine.ChangeState(PlayerState.Idle);
