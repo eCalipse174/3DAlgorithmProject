@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private readonly float m_landDelay = 0.5f;
 
 
+    private IEnumerator moveCoroutine;
+
     private float m_moveSpeed;
     public float MoveSpeed { get { return  m_moveSpeed; } }
 
@@ -139,7 +141,13 @@ public class PlayerMovement : MonoBehaviour
     /// <param name="distance"></param>
     public void BehaviourMove(float pDistance, AnimationCurve pCurve, float pDuration)
     {
-        StartCoroutine(BehaviourMoveCoroutine(pDistance, pCurve, pDuration));
+        moveCoroutine = BehaviourMoveCoroutine(pDistance, pCurve, pDuration);
+        StartCoroutine(moveCoroutine);
+    }
+    public void BehaviourStop()
+    {
+        if (moveCoroutine != null)
+            StopCoroutine(moveCoroutine);
     }
 
     private IEnumerator BehaviourMoveCoroutine(float pDistance, AnimationCurve pCurve, float pDuration)

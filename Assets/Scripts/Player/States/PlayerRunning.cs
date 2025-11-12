@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerRunning : PlayerStateBase
 {
-    public PlayerRunning(PlayerStateMachine pStateMachine, BehaiviourInfo pInfo) : base(pStateMachine, pInfo)
+    public PlayerRunning(PlayerStateMachine pStateMachine, BehaviourInfo pInfo) : base(pStateMachine, pInfo)
     {
     }
 
@@ -11,7 +11,9 @@ public class PlayerRunning : PlayerStateBase
     {
         PlayerMovement.SetIsAttacking(false);
         PlayerMovement.SetIsRunning(true);
+        PlayerMovement.BehaviourStop();
         //しいけしさ
+        PlayerAnimator.SetBool(PlayerState.Walking.ToString(), true);
         PlayerAnimator.SetBool(PlayerState.Running.ToString(), true);
     }
 

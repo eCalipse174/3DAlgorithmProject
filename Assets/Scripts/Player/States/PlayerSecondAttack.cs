@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerSecondAttack : PlayerStateBase
 {
-    public PlayerSecondAttack(PlayerStateMachine pStateMachine, BehaiviourInfo pInfo) : base(pStateMachine, pInfo)
+    public PlayerSecondAttack(PlayerStateMachine pStateMachine, BehaviourInfo pInfo) : base(pStateMachine, pInfo)
     {
     }
 
@@ -17,12 +17,16 @@ public class PlayerSecondAttack : PlayerStateBase
     {
         m_waitingTime += Time.deltaTime;
 
+        if (Input.GetButtonDown("Dash"))
+        {
+            PlayerAnimator.StopPlayback();
+            ChangeActions(PlayerState.Idle);
+
+            PlayerStateMachine.ChangeState(PlayerState.Running);
+        }
+
         if (m_waitingTime >= m_info.StopTime)
         {
-            if (Input.GetButtonDown("Dash"))
-            {
-                PlayerStateMachine.ChangeState(PlayerState.Running);
-            }
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 PlayerStateMachine.ChangeState(PlayerState.ThirdAttack);

@@ -18,7 +18,7 @@ public enum PlayerState
 
 public class PlayerStateMachine : MonoBehaviour
 {
-    [SerializeField] private List<BehaiviourInfo> m_behaiviourInfos = new List<BehaiviourInfo>();
+    [SerializeField] private List<BehaviourInfo> m_behaiviourInfos = new List<BehaviourInfo>();
 
     private StateMachine m_stateMachine;
     private Dictionary<PlayerState, IState> m_stateByKey;
@@ -31,8 +31,8 @@ public class PlayerStateMachine : MonoBehaviour
         m_stateMachine = new StateMachine();
         m_stateByKey = new Dictionary<PlayerState, IState>();
         m_stateByKey.Add(PlayerState.Idle, new PlayerIdle(this, null));
-        m_stateByKey.Add(PlayerState.Walking, new PlayerWalking(this, m_behaiviourInfos[(int)PlayerState.Walking]));
-        m_stateByKey.Add(PlayerState.Running, new PlayerRunning(this, m_behaiviourInfos[(int)PlayerState.Running]));
+        m_stateByKey.Add(PlayerState.Walking, new PlayerWalking(this, null));
+        m_stateByKey.Add(PlayerState.Running, new PlayerRunning(this, null));
         m_stateByKey.Add(PlayerState.Jumping, new PlayerJumping(this, null));
         m_stateByKey.Add(PlayerState.FirstAttack, new PlayerFirstAttack(this, m_behaiviourInfos[(int)PlayerState.FirstAttack]));
         m_stateByKey.Add(PlayerState.SecondAttack, new PlayerSecondAttack(this, m_behaiviourInfos[(int)PlayerState.SecondAttack]));

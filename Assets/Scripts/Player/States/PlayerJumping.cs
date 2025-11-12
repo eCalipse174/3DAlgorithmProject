@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerJumping : PlayerStateBase
 {
-    public PlayerJumping(PlayerStateMachine pStateMachine, BehaiviourInfo pInfo) : base(pStateMachine, pInfo)
+    public PlayerJumping(PlayerStateMachine pStateMachine, BehaviourInfo pInfo) : base(pStateMachine, pInfo)
     {
     }
 

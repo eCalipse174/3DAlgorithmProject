@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerWalking : PlayerStateBase
 {
-    public PlayerWalking(PlayerStateMachine pStateMachine, BehaiviourInfo pInfo) : base(pStateMachine, pInfo)
+    public PlayerWalking(PlayerStateMachine pStateMachine, BehaviourInfo pInfo) : base(pStateMachine, pInfo)
     {
     }
 

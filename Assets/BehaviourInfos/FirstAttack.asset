@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa1574ff947575e448d62a88c5d31e5d, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ba5d8ee85d036f4ab5ff988ee7ffb61, type: 3}
   m_Name: FirstAttack
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::BehaviourInfo
   movingCurve:
     serializedVersion: 2
     m_Curve:
@@ -57,3 +57,6 @@ MonoBehaviour:
   distance: 0.65
   comboWaitingTime: 0.7875
   stopTime: 0.4375
+  areaRadius: 0
+  effectDelay: 0.2
+  hits: 

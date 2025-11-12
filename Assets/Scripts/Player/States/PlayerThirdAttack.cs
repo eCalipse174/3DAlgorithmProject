@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerThirdAttack : PlayerStateBase
 {
-    public PlayerThirdAttack(PlayerStateMachine pStateMachine, BehaiviourInfo pInfo) : base(pStateMachine, pInfo)
+    public PlayerThirdAttack(PlayerStateMachine pStateMachine, BehaviourInfo pInfo) : base(pStateMachine, pInfo)
     {
     }
 
@@ -17,13 +17,16 @@ public class PlayerThirdAttack : PlayerStateBase
     {
         m_waitingTime += Time.deltaTime;
 
+        if (Input.GetButtonDown("Dash"))
+        {
+            PlayerAnimator.StopPlayback();
+            ChangeActions(PlayerState.Idle);
+
+            PlayerStateMachine.ChangeState(PlayerState.Running);
+        }
+
         if (m_waitingTime >= m_info.StopTime)
         {
-            if (Input.GetButtonDown("Dash"))
-            {
-                PlayerStateMachine.ChangeState(PlayerState.Running);
-            }
-
             if (Input.GetButtonDown("Jump"))
             {
                 PlayerMovement.Jump();

@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class PlayerIdle : PlayerStateBase
 {
-    public PlayerIdle(PlayerStateMachine pStateMachine, BehaiviourInfo pInfo) : base(pStateMachine, pInfo)
+    public PlayerIdle(PlayerStateMachine pStateMachine, BehaviourInfo pInfo) : base(pStateMachine, pInfo)
     {
     }
 
     public override void Enter()
     {
+        PlayerMovement.SetIsAttacking(false);
         PlayerAnimator.SetBool(PlayerState.Walking.ToString(), false);
     }
 
