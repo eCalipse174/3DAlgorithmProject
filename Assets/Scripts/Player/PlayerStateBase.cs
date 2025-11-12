@@ -58,6 +58,7 @@ public class PlayerStateBase : IState
 
     protected void ChangeActions(PlayerState pNextState)
     {
+        PlayerAnimator.StopPlayback();
         PlayerAnimator.Play(pNextState.ToString(), 0, 0);
         PlayerAnimator.Play(pNextState.ToString() + "_Weapon", 1, 0);
     }

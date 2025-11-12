@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerThirdAttack : PlayerStateBase
@@ -44,10 +45,18 @@ public class PlayerThirdAttack : PlayerStateBase
 
     protected override void Attack()
     {
+        PlayerBattle.StartCoroutine(Do());
         //얍
-        PlayerAnimator.Play(PlayerState.ThirdAttack.ToString(), 0, 0);
-        PlayerAnimator.Play(PlayerState.ThirdAttack.ToString() + "_Weapon", 1, 0);
+        ChangeActions(PlayerState.ThirdAttack);
         // +앞으로가기;
         PlayerMovement.BehaviourMove(m_info.Distance, m_info.MovingCurve, m_info.StopTime);
+    }
+
+    protected override IEnumerator Do()
+    {
+        yield return null;
+
+        yield return new WaitForSeconds(m_info.EffectDelay);
+        PlayerEffects.PlayEffect(PlayerState.ThirdAttack);
     }
 }

@@ -37,6 +37,7 @@ public class PlayerStateMachine : MonoBehaviour
         m_stateByKey.Add(PlayerState.FirstAttack, new PlayerFirstAttack(this, m_behaiviourInfos[(int)PlayerState.FirstAttack]));
         m_stateByKey.Add(PlayerState.SecondAttack, new PlayerSecondAttack(this, m_behaiviourInfos[(int)PlayerState.SecondAttack]));
         m_stateByKey.Add(PlayerState.ThirdAttack, new PlayerThirdAttack(this, m_behaiviourInfos[(int)PlayerState.ThirdAttack]));
+        m_stateByKey.Add(PlayerState.FirstSkill, new PlayerFirstSkill(this, m_behaiviourInfos[(int)PlayerState.FirstSkill]));
     }
 
     private void Start()

@@ -58,5 +58,5 @@ MonoBehaviour:
   comboWaitingTime: 0
   stopTime: 1.1
   areaRadius: 0
-  effectDelay: 0
+  effectDelay: 0.3
   hits: 

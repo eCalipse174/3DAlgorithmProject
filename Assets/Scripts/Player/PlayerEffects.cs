@@ -12,6 +12,8 @@ public class PlayerEffects : MonoBehaviour
         m_effects.Add(PlayerState.FirstAttack, GameObject.Find("FirstAttack").GetComponent<VisualEffect>());
         m_effects.Add(PlayerState.SecondAttack, GameObject.Find("SecondAttack").GetComponent<VisualEffect>());
         m_effects.Add(PlayerState.ThirdAttack, GameObject.Find("ThirdAttack").GetComponent<VisualEffect>());
+
+        m_effects.Add(PlayerState.FirstSkill, GameObject.Find("FirstSkill").GetComponent<VisualEffect>());
     }
 
     public void PlayEffect(PlayerState pState)

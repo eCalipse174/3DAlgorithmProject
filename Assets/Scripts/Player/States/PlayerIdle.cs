@@ -28,5 +28,10 @@ public class PlayerIdle : PlayerStateBase
             PlayerMovement.Jump();
             PlayerStateMachine.ChangeState(PlayerState.Jumping);
         }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            PlayerStateMachine.ChangeState(PlayerState.FirstSkill);
+        }
     }
 }
