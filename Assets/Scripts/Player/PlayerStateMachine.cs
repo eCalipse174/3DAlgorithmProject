@@ -16,48 +16,29 @@ public enum PlayerState
     FirstSkill
 }
 
-public class PlayerStateMachine : MonoBehaviour
+public class PlayerStateMachine : StateControllerBase<PlayerState>
 {
-    [SerializeField] private List<BehaviourInfo> m_behaiviourInfos = new List<BehaviourInfo>();
+    [SerializeField] private List<BehaviourInfo> m_behaviourInfos = new List<BehaviourInfo>();
 
-    private StateMachine m_stateMachine;
-    private Dictionary<PlayerState, IState> m_stateByKey;
-
-    private PlayerState m_currentState;
-    public PlayerState CurrentState { get { return m_currentState; } }
-
-    private void Awake()
+    protected override Dictionary<PlayerState, IState> CreateStates()
     {
-        m_stateMachine = new StateMachine();
-        m_stateByKey = new Dictionary<PlayerState, IState>();
-        m_stateByKey.Add(PlayerState.Idle, new PlayerIdle(this, null));
-        m_stateByKey.Add(PlayerState.Walking, new PlayerWalking(this, null));
-        m_stateByKey.Add(PlayerState.Running, new PlayerRunning(this, null));
-        m_stateByKey.Add(PlayerState.Jumping, new PlayerJumping(this, null));
-        m_stateByKey.Add(PlayerState.FirstAttack, new PlayerFirstAttack(this, m_behaiviourInfos[(int)PlayerState.FirstAttack]));
-        m_stateByKey.Add(PlayerState.SecondAttack, new PlayerSecondAttack(this, m_behaiviourInfos[(int)PlayerState.SecondAttack]));
-        m_stateByKey.Add(PlayerState.ThirdAttack, new PlayerThirdAttack(this, m_behaiviourInfos[(int)PlayerState.ThirdAttack]));
-        m_stateByKey.Add(PlayerState.FirstSkill, new PlayerFirstSkill(this, m_behaiviourInfos[(int)PlayerState.FirstSkill]));
+        var stateByKey = new Dictionary<PlayerState, IState>();
+
+        stateByKey = new Dictionary<PlayerState, IState>();
+        stateByKey.Add(PlayerState.Idle, new PlayerIdle(this, null));
+        stateByKey.Add(PlayerState.Walking, new PlayerWalking(this, null));
+        stateByKey.Add(PlayerState.Running, new PlayerRunning(this, null));
+        stateByKey.Add(PlayerState.Jumping, new PlayerJumping(this, null));
+        stateByKey.Add(PlayerState.FirstAttack, new PlayerFirstAttack(this, m_behaviourInfos[(int)PlayerState.FirstAttack]));
+        stateByKey.Add(PlayerState.SecondAttack, new PlayerSecondAttack(this, m_behaviourInfos[(int)PlayerState.SecondAttack]));
+        stateByKey.Add(PlayerState.ThirdAttack, new PlayerThirdAttack(this, m_behaviourInfos[(int)PlayerState.ThirdAttack]));
+        stateByKey.Add(PlayerState.FirstSkill, new PlayerFirstSkill(this, m_behaviourInfos[(int)PlayerState.FirstSkill]));
+
+        return stateByKey;
     }
 
-    private void Start()
+    protected override PlayerState GetInitialState()
     {
-        m_currentState = PlayerState.Walking;
-        m_stateMachine.ChangeState(m_stateByKey[PlayerState.Walking]);
-    }
-
-    private void Update()
-    {
-        m_stateMachine.Update();
-    }
-
-    public void ChangeState(PlayerState pState)
-    {
-        if (pState == CurrentState)
-            return;
-
-        //Debug.Log($"State Changed: {m_currentState} => {pState}");
-        m_currentState = pState;
-        m_stateMachine.ChangeState(m_stateByKey[m_currentState]);
+        return PlayerState.Idle;
     }
 }

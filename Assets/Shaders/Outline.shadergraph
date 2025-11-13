@@ -8,9 +8,6 @@
         },
         {
             "m_Id": "8ad977bce23240019c0826175c1ab542"
-        },
-        {
-            "m_Id": "037566ba46894827911cdeeffa38bae8"
         }
     ],
     "m_Keywords": [],
@@ -314,46 +311,6 @@
         {
             "m_Id": "ee5eb0cc6f974676925cf6f899f7aa50"
         }
-    ]
-}
-
-{
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
-    "m_ObjectId": "037566ba46894827911cdeeffa38bae8",
-    "m_Guid": {
-        "m_GuidSerialized": "4be139f7-6005-423c-a886-722efbf2bd8d"
-    },
-    "m_Name": "Fade Distance",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Fade Distance",
-    "m_DefaultReferenceName": "_Fade_Distance",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_PerRendererData": false,
-    "m_customAttributes": [],
-    "m_Value": 75.0,
-    "m_FloatType": 0,
-    "m_RangeValues": {
-        "x": 0.0,
-        "y": 1.0
-    },
-    "m_SliderType": 0,
-    "m_SliderPower": 3.0,
-    "m_EnumType": 0,
-    "m_CSharpEnumString": "",
-    "m_EnumNames": [
-        "Default"
-    ],
-    "m_EnumValues": [
-        0
     ]
 }
 
@@ -723,9 +680,6 @@
         },
         {
             "m_Id": "8ad977bce23240019c0826175c1ab542"
-        },
-        {
-            "m_Id": "037566ba46894827911cdeeffa38bae8"
         }
     ]
 }
@@ -1409,7 +1363,7 @@
     "m_PerRendererData": false,
     "m_customAttributes": [],
     "m_Value": 0.0010000000474974514,
-    "m_FloatType": 1,
+    "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
         "y": 0.0010000000474974514
