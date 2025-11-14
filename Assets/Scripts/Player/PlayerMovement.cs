@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
     public bool IsGrounded => m_isGrounded;
 
     private bool m_isAttacking;
+    private bool m_isFlinching;
 
     //private CharacterController m_characterController;
     private PlayerCamera m_playerCamera;
@@ -49,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
         m_leftJumpDelay = m_jumpDelay;
         m_leftDashDelay = m_dashDelay;
         m_leftLandDelay = m_landDelay;
+
+        m_rigidbody.freezeRotation = true;
     }
 
     private void Update()
@@ -58,18 +61,18 @@ public class PlayerMovement : MonoBehaviour
         m_dashSpaceDelay += Time.deltaTime;
         m_leftLandDelay -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            if (m_leftLandDelay <= 0)
-            {
-                StartCoroutine(Land());
-            }
-        }
+        //if (Input.GetKeyDown(KeyCode.LeftControl))
+        //{
+        //    if (m_leftLandDelay <= 0)
+        //    {
+        //        StartCoroutine(Land());
+        //    }
+        //}
     }
 
     private void FixedUpdate()
     {
-        if (!m_isAttacking)
+        if (!m_isAttacking && !m_isFlinching)
             {
                 float horiz = Input.GetAxisRaw("Horizontal");
                 float vert = Input.GetAxisRaw("Vertical");
@@ -91,8 +94,12 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    [Obsolete]
     public void Jump()
     {
+        return;
+        //ÇÏÇÏ Á¡ÇÁ¸¦ ¾ø¾ÙÁÙÀº ¸ô¶úÁö?
+
         if (!m_isGrounded)
             return;
 
@@ -106,9 +113,9 @@ public class PlayerMovement : MonoBehaviour
     //    Debug.Log("´ë½Ã");
     //    m_leftDashDelay = m_dashDelay;
 
-    //    m_rigidbody.AddForce();
+    //    m_rigidbody.AddForce(m_model.forward * 10, ForceMode.Impulse);
 
-    //    yield return new WaitForSeconds(0.1f);
+    //    yield return new WaitForSeconds(0.3f);
     //    m_rigidbody.linearVelocity = Vector3.zero;
     //}
 
@@ -180,6 +187,11 @@ public class PlayerMovement : MonoBehaviour
     public void SetIsAttacking(bool pIsAttacking)
     {
         m_isAttacking = pIsAttacking;
+    }
+
+    public void SetIsFlinching(bool pIsFlinching)
+    {
+        m_isFlinching = pIsFlinching;
     }
 
 }

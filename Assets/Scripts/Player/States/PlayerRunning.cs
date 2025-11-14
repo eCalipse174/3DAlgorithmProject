@@ -12,7 +12,7 @@ public class PlayerRunning : PlayerStateBase
         PlayerMovement.SetIsAttacking(false);
         PlayerMovement.SetIsRunning(true);
         PlayerMovement.BehaviourStop();
-        //しいけしさ
+        
         PlayerAnimator.SetBool(PlayerState.Walking.ToString(), true);
         PlayerAnimator.SetBool(PlayerState.Running.ToString(), true);
     }

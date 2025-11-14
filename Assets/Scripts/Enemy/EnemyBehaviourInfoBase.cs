@@ -16,6 +16,13 @@ public class EnemyBehaviourInfoBase<T> : ScriptableObject
     [SerializeField] protected T m_state;
 
     [Space]
+    [Header("Move")]
+
+    [SerializeField] private AnimationCurve m_movingCurve;
+    [SerializeField] private float distance;
+    [SerializeField] private float duration;
+
+    [Space]
     [Header("Hit")]
 
     [SerializeField] protected float areaRadius;
@@ -28,6 +35,11 @@ public class EnemyBehaviourInfoBase<T> : ScriptableObject
 
     public Enemy Enemy => m_enemy;
     public T State => m_state;
+
+    public AnimationCurve MovingCurve => m_movingCurve;
+    public float Distance => distance;
+    public float Duration => duration;
+
     public float AreaRadius => areaRadius;
     public float EffectDelay => effectDelay;
     public List<int> Hits => hits;

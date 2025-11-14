@@ -20,4 +20,10 @@ public class PlayerEffects : MonoBehaviour
     {
         m_effects[pState].Play();
     }
+
+    public void StopEffect(PlayerState pState)
+    {
+        m_effects[pState].Stop();
+        m_effects[pState].Reinit();
+    }
 }

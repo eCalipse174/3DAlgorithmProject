@@ -17,7 +17,7 @@ public class EnemyPawnStateBase : IState
     {
         m_pawnStateMachine = pStateMachine;
         m_pawnBattle = pStateMachine.GetComponent<EnemyPawnBattle>();
-        m_playerObject = PawnStateMachine.PlayerObject;
+        m_playerObject = pStateMachine.PlayerObject;
         m_info = pInfo;
     }
 

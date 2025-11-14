@@ -11,8 +11,12 @@ public abstract class StateControllerBase<T> : MonoBehaviour
     private T m_currentState;
     public T CurrentState => m_currentState;
 
+    protected GameObject m_playerObject;
+    [HideInInspector] public GameObject PlayerObject => m_playerObject;
+
     private void Awake()
     {
+        m_playerObject = GameObject.Find("Player");
         m_stateMachine = new StateMachine();
         m_stateByKey = CreateStates();
     }
@@ -33,7 +37,7 @@ public abstract class StateControllerBase<T> : MonoBehaviour
         if (m_currentState.Equals(pState))
             return;
 
-        Debug.Log($"Player State Change {m_currentState} => {pState}");
+        //Debug.Log($"Player State Change {m_currentState} => {pState}");
         m_currentState = pState;
         m_stateMachine.ChangeState(m_stateByKey[m_currentState]);
     }

@@ -23,6 +23,7 @@ public class PlayerFirstAttack : PlayerStateBase
         {
             PlayerAnimator.StopPlayback();
             ChangeActions(PlayerState.Idle);
+            PlayerEffects.StopEffect(PlayerState.FirstAttack);
 
             PlayerStateMachine.ChangeState(PlayerState.Running);
         }

@@ -22,6 +22,7 @@ public class PlayerThirdAttack : PlayerStateBase
         {
             PlayerAnimator.StopPlayback();
             ChangeActions(PlayerState.Idle);
+            PlayerEffects.StopEffect(PlayerState.ThirdAttack);
 
             PlayerStateMachine.ChangeState(PlayerState.Running);
         }

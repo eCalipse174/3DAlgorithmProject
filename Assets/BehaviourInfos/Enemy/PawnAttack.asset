@@ -14,6 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyPawnBehaviourInfo
   m_enemy: 0
   m_state: 1
-  areaRadius: 3
+  m_movingCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  distance: 0
+  duration: 0
+  areaRadius: 2
   effectDelay: 1
   hits: 46000000
+  afterDelay: 1.5

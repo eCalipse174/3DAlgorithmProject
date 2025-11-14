@@ -22,6 +22,7 @@ public class PlayerSecondAttack : PlayerStateBase
         {
             PlayerAnimator.StopPlayback();
             ChangeActions(PlayerState.Idle);
+            PlayerEffects.StopEffect(PlayerState.SecondAttack);
 
             PlayerStateMachine.ChangeState(PlayerState.Running);
         }

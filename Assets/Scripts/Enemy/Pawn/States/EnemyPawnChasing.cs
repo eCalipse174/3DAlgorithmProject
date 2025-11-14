@@ -30,7 +30,5 @@ public class EnemyPawnChasing : EnemyPawnStateBase
         {
             PawnStateMachine.ChangeState(PawnState.Attack);
         }
-
-        
     }
 }

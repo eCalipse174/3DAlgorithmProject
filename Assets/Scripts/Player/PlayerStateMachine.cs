@@ -24,7 +24,6 @@ public class PlayerStateMachine : StateControllerBase<PlayerState>
     {
         var stateByKey = new Dictionary<PlayerState, IState>();
 
-        stateByKey = new Dictionary<PlayerState, IState>();
         stateByKey.Add(PlayerState.Idle, new PlayerIdle(this, null));
         stateByKey.Add(PlayerState.Walking, new PlayerWalking(this, null));
         stateByKey.Add(PlayerState.Running, new PlayerRunning(this, null));

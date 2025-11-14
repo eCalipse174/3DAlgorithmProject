@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86742ea6cf57b37459a4143941d9dfe1, type: 3}
+  m_Name: KnightJump
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyKnightBehaviourInfo
+  m_enemy: 1
+  m_state: 1
+  m_movingCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  distance: 0
+  duration: 0
+  areaRadius: 0
+  effectDelay: 0
+  hits: 
+  afterDelay: 0.5
+  jumpDistance: 10
+  jumpHeight: 5
+  jumpDuration: 1.5
+  maxDistance: 15
