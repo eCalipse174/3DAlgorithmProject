@@ -10,29 +10,29 @@ public class PlayerStat : MonoBehaviour
 
     private void Start()
     {
-        m_currentHp = m_maxHp;
+        GameManager.Instance.InitHp(m_maxHp);
+        LoadHp();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void LoadHp()
     {
-        if (other.CompareTag("Enemy"))
-        {
-            //아야!
-            Hurt(10); //기본 접촉대미지
-        }
+        m_currentHp = GameManager.Instance.CurrentPlayerHp;
     }
 
     public void Hurt(float pDamage)
     {
         //경직은state로해야할듯
         m_currentHp -= pDamage;
+        GameManager.Instance.SaveHp(m_currentHp);
+        UIManager.Instance.ShowHp(m_currentHp / m_maxHp);
         Debug.Log($"{pDamage}대미지 입음, 남은 체력: {m_currentHp}/{m_maxHp}");
 
         if (m_currentHp <= 0)
         {
             //끝
             Debug.Log("끝");
-            GameManager.Instance.EndGame();
+            UIManager.Instance.EndGame();
+            GameManager.Instance.Defeat();
         }
     }
 }

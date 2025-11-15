@@ -14,19 +14,19 @@ public class EnemyStat : MonoBehaviour
     private void Start()
     {
         m_currentHp = m_maxHp;
+        GameManager.Instance.RegisterEnemy(this.gameObject);
     }
 
     public void Hurt(float pDamage)
     {
         //경직은state로해야할듯
         m_currentHp -= pDamage;
-        Debug.Log($"{pDamage}대미지 입음, 남은 체력: {m_currentHp}/{m_maxHp}");
+        //Debug.Log($"{pDamage}대미지 입음, 남은 체력: {m_currentHp}/{m_maxHp}");
         m_hurtEffect.Play();
 
         if (m_currentHp <= 0)
         {
-            //끝
-            Debug.Log($"{name} 뒤짐");
+            GameManager.Instance.DieEnemy(this.gameObject);
             gameObject.SetActive(false);
         }
     }

@@ -7,7 +7,7 @@ public class EnemyBattleBase<T> : MonoBehaviour
     where T : Enum
 {
     protected Dictionary<T, Transform> m_hitTransforms;
-    protected List<VisualEffect> m_effect;
+    protected List<VisualEffect> m_effects;
     protected VisualEffect m_hitEffect;
 
     public virtual void Hit(EnemyBehaviourInfoBase<T> pInfo, int pHitIndex)
@@ -33,6 +33,6 @@ public class EnemyBattleBase<T> : MonoBehaviour
 
     public void PlayEffect(int pIndex)
     {
-        m_effect[pIndex].Play();
+        m_effects[pIndex].Play();
     }
 }

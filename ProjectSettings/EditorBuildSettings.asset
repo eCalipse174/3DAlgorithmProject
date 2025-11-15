@@ -6,8 +6,35 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/TitleScene.unity
+    guid: 50232d2ac762bd14f98db084c62669a2
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 13c2d69d1d5b76b4c9c2ddabca8f6bbe
+  - enabled: 1
+    path: Assets/Scenes/Stages/Stage1.unity
+    guid: 9206c0bacfb59bf489fbf4dcd8c7c8d8
+  - enabled: 1
+    path: Assets/Scenes/Stages/Stage2.unity
+    guid: 29f369c167626134f8e4d82b6df433e2
+  - enabled: 1
+    path: Assets/Scenes/Stages/Stage3.unity
+    guid: 171e867cd851f8840b5fdfd2d4343239
+  - enabled: 1
+    path: Assets/Scenes/Stages/Stage4.unity
+    guid: 13b8b3d4837cfab4fb08dd83541afca4
+  - enabled: 1
+    path: Assets/Scenes/Stages/Stage5.unity
+    guid: 664a1f88470e3834990d8f7f04a12775
+  - enabled: 1
+    path: Assets/Scenes/TutorialScene.unity
+    guid: 2c69a1775e13e65489d86571eda53329
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: 4328cdcf85d405f4a96b611f50fa1dde
+  - enabled: 1
+    path: Assets/Scenes/DefeatScene.unity
+    guid: bb55fbac204fbed43831297521b624f2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

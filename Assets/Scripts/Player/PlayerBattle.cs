@@ -26,7 +26,7 @@ public class PlayerBattle : MonoBehaviour, ICoroutineHost
             // 에너미 때리기
             if (hit.CompareTag("Enemy"))
             {
-                Debug.Log($"{name}이(가) {hit.name}에게 {pInfo.Hits[pHitIndex]} 데미지!");
+                //Debug.Log($"{name}이(가) {hit.name}에게 {pInfo.Hits[pHitIndex]} 데미지!");
                 hit.GetComponent<EnemyStat>().Hurt(pInfo.Hits[pHitIndex]);
             }
         }
