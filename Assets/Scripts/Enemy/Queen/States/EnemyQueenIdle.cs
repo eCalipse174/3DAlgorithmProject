@@ -14,6 +14,7 @@ public class EnemyQueenIdle : EnemyQueenStateBase
     {
         m_transform = pStateMachine.transform;
         m_IdleTime = pIdleTime;
+        m_chaseDistance = pChaseDistance;
     }
 
     public override void Enter()
@@ -32,11 +33,11 @@ public class EnemyQueenIdle : EnemyQueenStateBase
 
         if (m_time > m_IdleTime)
         {
-            QueenStateMachine.ChangeState(QueenState.Chasing);
+            QueenStateMachine.ChangeState(QueenState.RangeAttack);
         }
         if (m_distance > m_chaseDistance)
         {
-            //QueenStateMachine.ChangeState(QueenState.RangeAttack);
+            QueenStateMachine.ChangeState(QueenState.Chasing);
         }
     }
 }

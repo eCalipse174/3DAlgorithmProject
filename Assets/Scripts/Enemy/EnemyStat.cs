@@ -4,20 +4,20 @@ using UnityEngine.VFX;
 
 public class EnemyStat : MonoBehaviour
 {
-    [SerializeField] private float m_maxHp;
+    [SerializeField] protected float m_maxHp;
     [SerializeField] private float m_flinchTime;
 
     [SerializeField] private VisualEffect m_hurtEffect;
 
-    private float m_currentHp;
+    protected float m_currentHp;
 
-    private void Start()
+    protected virtual void Start()
     {
         m_currentHp = m_maxHp;
         GameManager.Instance.RegisterEnemy(this.gameObject);
     }
 
-    public void Hurt(float pDamage)
+    public virtual void Hurt(float pDamage)
     {
         //경직은state로해야할듯
         m_currentHp -= pDamage;

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int m_maxStage;
 
     private List<GameObject> m_enemies = new List<GameObject>();
+    public List<GameObject> Enemies => m_enemies;
 
     private int m_currentStage;
     private float m_currentPlayerHp;
@@ -101,4 +102,50 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("TitleScene");
         Destroy(gameObject);
     }
+}
+
+class Test
+{
+    enum State
+    {
+        Idle,
+        Walk,
+        Run,
+        Jump,
+        Attack
+    }
+
+    State currentState;
+
+    public void Test_()
+    {
+        switch (currentState)
+        {
+            case State.Idle:
+                Idle();
+                break;
+
+            case State.Walk:
+                Walk();
+                break;
+
+            case State.Run:
+                Run(); 
+                break;
+
+            case State.Jump:
+                Jump();
+                break;
+
+            case State.Attack:
+                Attack(); 
+                break;
+        }
+    }
+
+    void Idle() { }
+    void Walk() { }
+    void Run() { }
+    void Jump() { }
+    void Attack() { }
 }

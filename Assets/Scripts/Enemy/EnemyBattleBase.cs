@@ -24,8 +24,9 @@ public class EnemyBattleBase<T> : MonoBehaviour
                 Debug.Log($"{name}이(가) {hit.name}에게 {pInfo.Hits[pHitIndex]} 데미지!");
                 hit.GetComponent<PlayerStat>().Hurt(pInfo.Hits[pHitIndex]);
 
-                m_hitEffect.transform.position = hit.transform.position;
-                m_hitEffect.transform.position += new Vector3(0, 2.2f, 0);
+                //m_hitEffect.transform.position = hit.transform.position;
+                //m_hitEffect.transform.position += new Vector3(0, 2.2f, 0);
+                m_hitEffect.SetVector3("spawnPos", hit.transform.position);
                 m_hitEffect.Play();
             }
         }

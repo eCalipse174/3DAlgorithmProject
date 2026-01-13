@@ -21,7 +21,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   distance: 0
-  duration: 0.6
+  duration: 0.7
   areaRadius: 0
   effectDelay: 0
   hits: 

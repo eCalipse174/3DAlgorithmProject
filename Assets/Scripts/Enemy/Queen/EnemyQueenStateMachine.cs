@@ -18,9 +18,11 @@ public class EnemyQueenStateMachine : StateControllerBase<QueenState>
     {
         var stateByKey = new Dictionary<QueenState, IState>();
 
-        stateByKey.Add(QueenState.Idle, new EnemyQueenIdle(this, 6, 20));
-        stateByKey.Add(QueenState.Chasing, new EnemyQueenChasing(this, m_behaviourInfos[(int)QueenState.Chasing], 7));
+        stateByKey.Add(QueenState.Idle, new EnemyQueenIdle(this, 1.7f, 20));
+        stateByKey.Add(QueenState.Chasing, new EnemyQueenChasing(this, m_behaviourInfos[(int)QueenState.Chasing], 5, 1.7f));
         stateByKey.Add(QueenState.ComboAttack, new EnemyQueenComboAttack(this, m_behaviourInfos[(int)QueenState.ComboAttack]));
+        stateByKey.Add(QueenState.RangeAttack, new EnemyQueenRangeAttack(this, m_behaviourInfos[(int)QueenState.RangeAttack]));
+        stateByKey.Add(QueenState.BackStep, new EnemyQueenBackStep(this, m_behaviourInfos[(int)QueenState.BackStep]));
 
         return stateByKey;
     }

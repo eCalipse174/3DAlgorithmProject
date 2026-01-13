@@ -37,7 +37,6 @@ public abstract class StateControllerBase<T> : MonoBehaviour
         if (m_currentState.Equals(pState))
             return;
 
-        //Debug.Log($"Player State Change {m_currentState} => {pState}");
         m_currentState = pState;
         m_stateMachine.ChangeState(m_stateByKey[m_currentState]);
     }

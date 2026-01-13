@@ -52,7 +52,7 @@ MonoBehaviour:
   areaRadius: 3
   effectDelay: 0.5
   hits: 50000000
-  afterDelay: 0.5
+  afterDelay: 1.2
   jumpDistance: 0
   jumpHeight: 0
   jumpDuration: 0

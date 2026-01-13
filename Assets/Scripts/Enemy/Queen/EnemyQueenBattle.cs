@@ -21,6 +21,7 @@ public class EnemyQueenBattle : EnemyBattleBase<QueenState>
         m_hitTransforms = new();
         m_effects = new();
         m_hitTransforms.Add(QueenState.ComboAttack, transform.Find("ComboAttackTransform"));
+        m_hitTransforms.Add(QueenState.RangeAttack, transform.Find("RangeAttackTransform"));
         m_effects.Add(transform.Find("ComboAttackEffect1").GetComponent<UnityEngine.VFX.VisualEffect>());
         m_effects.Add(transform.Find("ComboAttackEffect2").GetComponent<UnityEngine.VFX.VisualEffect>());
         m_effects.Add(transform.Find("RangeAttackEffect").GetComponent<UnityEngine.VFX.VisualEffect>());
@@ -31,6 +32,6 @@ public class EnemyQueenBattle : EnemyBattleBase<QueenState>
 
     public void ChangePhase()
     {
-        m_currentPhase++;
+        m_currentPhase = 2;
     }
 }

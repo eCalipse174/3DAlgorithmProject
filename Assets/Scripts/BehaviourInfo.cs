@@ -21,6 +21,7 @@ public class BehaviourInfo : ScriptableObject
 
     [SerializeField] private float areaRadius;
     [SerializeField] private float effectDelay;
+    [SerializeField] private float knockbackForce;
     [SerializeField] private List<int> hits;
 
 
@@ -42,5 +43,6 @@ public class BehaviourInfo : ScriptableObject
 
     public float AreaRadius => areaRadius;
     public float EffectDelay => effectDelay;
+    public float KnockbackForce => knockbackForce;
     public List<int> Hits => hits;
 }

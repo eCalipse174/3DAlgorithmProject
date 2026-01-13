@@ -52,6 +52,7 @@ public class PlayerFirstAttack : PlayerStateBase
 
     protected override void Attack()
     {
+        TargetingNearestEnemy();
         PlayerBattle.StartCoroutine(Do());
         //¾å
         ChangeActions(PlayerState.FirstAttack);

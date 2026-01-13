@@ -51,6 +51,7 @@ public class PlayerSecondAttack : PlayerStateBase
 
     protected override void Attack()
     {
+        TargetingNearestEnemy();
         PlayerBattle.StartCoroutine(Do());
         //¾å
         ChangeActions(PlayerState.SecondAttack);

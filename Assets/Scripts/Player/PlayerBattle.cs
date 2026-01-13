@@ -28,6 +28,10 @@ public class PlayerBattle : MonoBehaviour, ICoroutineHost
             {
                 //Debug.Log($"{name}이(가) {hit.name}에게 {pInfo.Hits[pHitIndex]} 데미지!");
                 hit.GetComponent<EnemyStat>().Hurt(pInfo.Hits[pHitIndex]);
+                if (hit.TryGetComponent<EnemyKnockback>(out var knockback))
+                {
+                    knockback.Knockback(pInfo.KnockbackForce, transform);
+                }
             }
         }
     }

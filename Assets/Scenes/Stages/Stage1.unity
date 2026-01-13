@@ -1011,7 +1011,7 @@ GameObject:
   m_Component:
   - component: {fileID: 491642202}
   - component: {fileID: 491642199}
-  - component: {fileID: 491642198}
+  - component: {fileID: 491642210}
   - component: {fileID: 491642197}
   - component: {fileID: 491642203}
   - component: {fileID: 491642204}
@@ -1046,33 +1046,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   m_model: {fileID: 2093655392}
---- !u!54 &491642198
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 491642196}
-  serializedVersion: 5
-  m_Mass: 7
-  m_LinearDamping: 0
-  m_AngularDamping: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
 --- !u!136 &491642199
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1259,6 +1232,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStat
   m_maxHp: 2000
   m_flinchTime: 0.5
+--- !u!54 &491642210
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491642196}
+  serializedVersion: 5
+  m_Mass: 7
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!1 &630844881
 GameObject:
   m_ObjectHideFlags: 0

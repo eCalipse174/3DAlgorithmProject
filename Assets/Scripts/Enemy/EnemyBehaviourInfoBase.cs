@@ -6,7 +6,10 @@ public enum Enemy
 {
     Pawn,
     Knight,
-    Queen
+    Queen,
+    Rook,
+    Bishop,
+    King
 }
 
 public class EnemyBehaviourInfoBase<T> : ScriptableObject

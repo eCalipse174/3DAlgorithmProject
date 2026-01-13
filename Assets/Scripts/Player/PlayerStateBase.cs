@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerStateBase : IState
@@ -56,5 +58,36 @@ public class PlayerStateBase : IState
         PlayerAnimator.StopPlayback();
         PlayerAnimator.Play(pNextState.ToString(), 0, 0);
         PlayerAnimator.Play(pNextState.ToString() + "_Weapon", 1, 0);
+    }
+
+    protected EnemyStat TargetingNearestEnemy()
+    {
+        List<GameObject> enemies = GameManager.Instance.Enemies;
+
+        if (enemies == null)
+            return null;
+
+        Transform nearest = null;
+        float minSqrDist = float.MaxValue;
+
+        Vector3 playerPos = m_playerStateMachine.transform.position;
+
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            Vector3 diff = enemies[i].transform.position - playerPos;
+            float sqrDist = diff.sqrMagnitude;
+
+            if (sqrDist < minSqrDist)
+            {
+                minSqrDist = sqrDist;
+                nearest = enemies[i].transform;
+            }
+        }
+
+        Vector3 pos = nearest.position;
+        pos.y = m_playerStateMachine.transform.position.y;
+        m_playerMovement.LookAtTarget(pos);
+
+        return nearest.GetComponent<EnemyStat>();
     }
 }

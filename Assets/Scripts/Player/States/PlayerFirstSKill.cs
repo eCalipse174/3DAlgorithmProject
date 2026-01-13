@@ -22,6 +22,7 @@ public class PlayerFirstSkill : PlayerStateBase
 
     protected override void Attack()
     {
+        TargetingNearestEnemy();
         PlayerBattle.StartCoroutine(Do());
         //¾å
         ChangeActions(PlayerState.FirstSkill);

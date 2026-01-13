@@ -94,6 +94,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void LookAtTarget(Vector3 pTarget)
+    {
+        m_model.LookAt(pTarget);
+    }
+
     [Obsolete]
     public void Jump()
     {
