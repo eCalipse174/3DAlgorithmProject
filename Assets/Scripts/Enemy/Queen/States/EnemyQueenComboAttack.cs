@@ -22,10 +22,12 @@ public class EnemyQueenComboAttack : EnemyQueenStateBase
         QueenBattle.PlayEffect((int)QueenAttack.Combo1);
         QueenBattle.StartCoroutine(Move(Info.Distance, Info.MovingCurve, Info.Duration));
         QueenBattle.Hit(Info, 0);
+        SoundManager.Instance.PlaySfx(SoundManager.Sfx.QueenSlash);
         yield return new WaitForSeconds(Info.EffectDelay); //여기서는 콤보 사이 딜레이
 
         QueenBattle.PlayEffect((int)QueenAttack.Combo2);
         QueenBattle.Hit(Info, 1);
+        SoundManager.Instance.PlaySfx(SoundManager.Sfx.QueenSlash);
 
         yield return new WaitForSeconds(Info.Duration - Info.EffectDelay);
         yield return new WaitForSeconds(Info.AfterDelay);

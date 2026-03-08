@@ -23,6 +23,7 @@ public class EnemyStat : MonoBehaviour
         m_currentHp -= pDamage;
         //Debug.Log($"{pDamage}대미지 입음, 남은 체력: {m_currentHp}/{m_maxHp}");
         m_hurtEffect.Play();
+        SoundManager.Instance.PlaySfx(SoundManager.Sfx.Hit);
 
         if (m_currentHp <= 0)
         {

@@ -60,6 +60,7 @@ public class PlayerThirdAttack : PlayerStateBase
 
         yield return new WaitForSeconds(m_info.EffectDelay);
         PlayerEffects.PlayEffect(PlayerState.ThirdAttack);
+        SoundManager.Instance.PlaySfx(SoundManager.Sfx.Attack3);
         PlayerBattle.Hit(m_info, 0);
 
         yield return new WaitForSeconds(0.15f);

@@ -25,6 +25,8 @@ public class EnemyBishopShot : EnemyBishopStateBase
         BishopBattle.SetHitPosition(targetPos, Info.State);
         yield return new WaitForSeconds(Info.EffectDelay);
         BishopBattle.Hit(Info, 0);
+        SoundManager.Instance.PlaySfx(SoundManager.Sfx.Bishop_A);
+        SoundManager.Instance.PlaySfx(SoundManager.Sfx.Bishop_B);
 
         yield return new WaitForSeconds(Info.Duration);
         yield return new WaitForSeconds(Info.AfterDelay);

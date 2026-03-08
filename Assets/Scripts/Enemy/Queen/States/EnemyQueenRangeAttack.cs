@@ -28,6 +28,7 @@ public class EnemyQueenRangeAttack : EnemyQueenStateBase
         QueenBattle.PlayEffect((int)QueenAttack.Range);
         yield return new WaitForSeconds(Info.EffectDelay);
         QueenBattle.Hit(Info, 0);
+        SoundManager.Instance.PlaySfx(SoundManager.Sfx.QueenBurst);
 
         yield return new WaitForSeconds(Info.Duration);
         yield return new WaitForSeconds(Info.AfterDelay);

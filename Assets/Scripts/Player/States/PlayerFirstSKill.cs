@@ -34,9 +34,12 @@ public class PlayerFirstSkill : PlayerStateBase
     {
         yield return null;
 
+        SoundManager.Instance.PlaySfx(SoundManager.Sfx.Skill_A);
+
         yield return new WaitForSeconds(m_info.EffectDelay);
         PlayerBattle.StartCoroutine(PlayerCamera.Shake(0.4f, 0.3f));
         PlayerEffects.PlayEffect(PlayerState.FirstSkill);
+        SoundManager.Instance.PlaySfx(SoundManager.Sfx.Skill_B);
         PlayerBattle.Hit(m_info, 0);
 
         yield return new WaitForSeconds(m_info.StopTime - m_info.EffectDelay);

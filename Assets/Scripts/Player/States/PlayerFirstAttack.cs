@@ -63,6 +63,7 @@ public class PlayerFirstAttack : PlayerStateBase
     protected override IEnumerator Do()
     {
         yield return null;
+        SoundManager.Instance.PlaySfx(SoundManager.Sfx.Attack1);
 
         yield return new WaitForSeconds(m_info.EffectDelay);
         PlayerEffects.PlayEffect(PlayerState.FirstAttack);

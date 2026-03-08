@@ -25,6 +25,7 @@ public class PlayerStat : MonoBehaviour
         m_currentHp -= pDamage;
         GameManager.Instance.SaveHp(m_currentHp);
         UIManager.Instance.ShowHp(m_currentHp / m_maxHp);
+        SoundManager.Instance.PlaySfx(SoundManager.Sfx.Hurt);
         Debug.Log($"{pDamage}대미지 입음, 남은 체력: {m_currentHp}/{m_maxHp}");
 
         if (m_currentHp <= 0)

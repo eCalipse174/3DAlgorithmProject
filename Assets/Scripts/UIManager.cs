@@ -22,16 +22,14 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log(instance == null);
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
+        if (instance != null && instance != this)
         {
             Destroy(gameObject);
+            return;
         }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -41,6 +39,11 @@ public class UIManager : MonoBehaviour
         m_isGame = true;
 
         StartStage();
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -55,6 +58,8 @@ public class UIManager : MonoBehaviour
 
     private void StartStage()
     {
+        Debug.Log("StartStage");
+
         m_black = GameObject.Find("Black").GetComponent<Image>();
         m_hpGauge = GameObject.Find("HpGauge").GetComponent<Image>();
         m_stageText = GameObject.Find("CurrentStageText").GetComponent<Text>();

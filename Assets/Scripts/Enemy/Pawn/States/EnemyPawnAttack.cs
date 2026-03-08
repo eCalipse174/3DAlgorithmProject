@@ -20,6 +20,7 @@ public class EnemyPawnAttack : EnemyPawnStateBase
         PawnBattle.PlayEffect(0);
         yield return new WaitForSeconds(Info.EffectDelay);
         PawnBattle.Hit(Info, 0);
+        SoundManager.Instance.PlaySfx(SoundManager.Sfx.Pawn);
 
         yield return new WaitForSeconds(Info.AfterDelay);
         PawnStateMachine.ChangeState(PawnState.Chasing);

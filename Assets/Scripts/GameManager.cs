@@ -35,8 +35,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("GameManager.Start()");
         m_currentStage = 0;
         UIManager.Instance.SetStage(m_currentStage);
-
-        SceneManager.sceneLoaded += UIManager.Instance.OnSceneLoaded;
     }
 
     public void InitHp(float pPlayerMaxHp)
@@ -96,6 +94,8 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
+        Debug.Log("EndGame");
+
         SceneManager.sceneLoaded -= UIManager.Instance.OnSceneLoaded;
         UIManager.Instance.DestroyInstance();
         instance = null;

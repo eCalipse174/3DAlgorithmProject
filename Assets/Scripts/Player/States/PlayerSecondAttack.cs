@@ -65,6 +65,7 @@ public class PlayerSecondAttack : PlayerStateBase
 
         yield return new WaitForSeconds(m_info.EffectDelay);
         PlayerEffects.PlayEffect(PlayerState.SecondAttack);
+        SoundManager.Instance.PlaySfx(SoundManager.Sfx.Attack2);
         PlayerBattle.Hit(m_info, 0);
     }
 }

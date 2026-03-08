@@ -26,6 +26,7 @@ public class EnemyKnightAttack : EnemyKnightStateBase
         yield return new WaitForSeconds(Info.EffectDelay);
         KnightBattle.StartCoroutine(Move(Info.Distance, Info.MovingCurve, Info.Duration));
         KnightBattle.Hit(Info, 0);
+        SoundManager.Instance.PlaySfx(SoundManager.Sfx.Knight);
 
         yield return new WaitForSeconds(Info.Duration);
         yield return new WaitForSeconds(Info.AfterDelay);
