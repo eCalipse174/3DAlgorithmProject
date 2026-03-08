@@ -20,7 +20,7 @@ Material:
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
-  m_LockedProperties: 
+  m_LockedProperties: _EdgeColor
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -42,13 +42,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Dissolve: 0
+    - _EdgeThinkness: 0.05
     - _Max: 1.53
     - _Min: 0.04
+    - _NoiseScale: 13
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Shades: 0.24
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EdgeColor: {r: 10.680628, g: 10.680628, b: 10.680628, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &7272755519762452639

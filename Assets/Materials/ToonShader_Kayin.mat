@@ -55,12 +55,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Dissolve: 0
+    - _EdgeThinkness: 0.05
     - _Max: 1.2
     - _Min: 0.09
+    - _NoiseScale: 30
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Shades: 0.4
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EdgeColor: {r: 0.6509434, g: 2, b: 1.631139, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -11,10 +12,16 @@ public class EnemyStat : MonoBehaviour
 
     protected float m_currentHp;
 
+    private Renderer m_renderer;
+    private Material[] m_materials;
+
     protected virtual void Start()
     {
         m_currentHp = m_maxHp;
         GameManager.Instance.RegisterEnemy(this.gameObject);
+
+        m_renderer = GetComponent<Renderer>();
+        m_materials = m_renderer.materials;
     }
 
     public virtual void Hurt(float pDamage)
@@ -27,8 +34,36 @@ public class EnemyStat : MonoBehaviour
 
         if (m_currentHp <= 0)
         {
-            GameManager.Instance.DieEnemy(this.gameObject);
-            gameObject.SetActive(false);
+            StartCoroutine(Dissolve());
         }
+    }
+
+    IEnumerator Dissolve()
+    {
+        float duration = 0.5f;
+
+        float time = 0f;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+
+            float t = time / duration;
+
+            foreach (var mat in m_materials)
+            {
+                Debug.Log(mat.name);
+                mat.SetFloat("_Dissolve", t);
+                Debug.Log(mat.HasProperty("_Dissolve"));
+            }
+
+            yield return null;
+        }
+
+        foreach (var mat in m_materials)
+            mat.SetFloat("_Dissolve", 1f);
+
+        GameManager.Instance.DieEnemy(gameObject);
+        gameObject.SetActive(false);
     }
 }
