@@ -84,8 +84,6 @@ public class PlayerCamera : MonoBehaviour
 
     private IEnumerator Zoom(AnimationCurve curve, float duration, float power)
     {
-        Debug.Log("Zoom");
-
         float originDistance = m_cameraDistance;
         float elapsed = 0;
 
@@ -94,7 +92,6 @@ public class PlayerCamera : MonoBehaviour
             float t = elapsed / duration;
 
             float value = curve.Evaluate(t);
-            Debug.Log(value);
 
             m_3rdPersonFollow.CameraDistance = originDistance + value * power;
 
