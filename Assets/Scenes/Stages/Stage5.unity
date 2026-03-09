@@ -1043,7 +1043,7 @@ MonoBehaviour:
   m_cameraTopClamp: 30
   m_cameraBottomClamp: -30
   m_followTarget: {fileID: 1805199522}
-  m_3rdPersonFollow: {fileID: 0}
+  m_3rdPersonFollow: {fileID: 1230883536}
   m_impulseSource: {fileID: 491642208}
 --- !u!114 &491642204
 MonoBehaviour:

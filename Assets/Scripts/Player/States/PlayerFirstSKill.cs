@@ -35,6 +35,7 @@ public class PlayerFirstSkill : PlayerStateBase
         yield return null;
 
         SoundManager.Instance.PlaySfx(SoundManager.Sfx.Skill_A);
+        PlayerCamera.ZoomCamera(m_info.CameraCurve, m_info.ZoomDuration, m_info.ZoomPower);
 
         yield return new WaitForSeconds(m_info.EffectDelay);
         PlayerBattle.StartCoroutine(PlayerCamera.Shake(0.4f, 0.3f));

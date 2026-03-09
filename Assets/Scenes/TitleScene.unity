@@ -283,17 +283,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
   audioMixer: {fileID: 24100000, guid: 5ef7ae44184cbd4478706ae83358bd80, type: 2}
   bgmClips:
-  - {fileID: 8300000, guid: 4d4cdaea2f12965488209316faec5063, type: 3}
-  - {fileID: 8300000, guid: 4d4cdaea2f12965488209316faec5063, type: 3}
-  - {fileID: 8300000, guid: 4d4cdaea2f12965488209316faec5063, type: 3}
-  - {fileID: 8300000, guid: 4d4cdaea2f12965488209316faec5063, type: 3}
-  - {fileID: 8300000, guid: 4d4cdaea2f12965488209316faec5063, type: 3}
-  - {fileID: 8300000, guid: 4d4cdaea2f12965488209316faec5063, type: 3}
-  - {fileID: 8300000, guid: 4d4cdaea2f12965488209316faec5063, type: 3}
-  - {fileID: 8300000, guid: 4d4cdaea2f12965488209316faec5063, type: 3}
-  - {fileID: 8300000, guid: 4d4cdaea2f12965488209316faec5063, type: 3}
-  - {fileID: 8300000, guid: 4d4cdaea2f12965488209316faec5063, type: 3}
-  - {fileID: 8300000, guid: 4d4cdaea2f12965488209316faec5063, type: 3}
+  - {fileID: 8300000, guid: 2c50ea089c7d640f79e4fbd57fa01b3b, type: 3}
+  - {fileID: 8300000, guid: 4d5eae9328a482f4da10e3ccb3069d4d, type: 3}
+  - {fileID: 8300000, guid: 795421d848241074396a693326ce295b, type: 3}
   bgmVolume: 0.3
   sfxClips:
   - {fileID: 8300000, guid: 8262e71264e4d48a29b4e7feab8f7d7e, type: 3}
@@ -742,6 +734,50 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875052696}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1049539800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1049539802}
+  - component: {fileID: 1049539801}
+  m_Layer: 0
+  m_Name: HitStopManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1049539801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049539800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 116052f13744a2c4aae9cc7326e34ebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HitStopManager
+--- !u!4 &1049539802
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049539800}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1568,3 +1604,4 @@ SceneRoots:
   - {fileID: 875052699}
   - {fileID: 2115834124}
   - {fileID: 250631992}
+  - {fileID: 1049539802}

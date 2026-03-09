@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("GameManager.Start()");
         m_currentStage = 0;
         UIManager.Instance.SetStage(m_currentStage);
+        SoundManager.Instance.ChangeBGM(SoundManager.Bgm.Battle);
     }
 
     public void InitHp(float pPlayerMaxHp)
@@ -100,7 +101,7 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.DestroyInstance();
         instance = null;
         SceneManager.LoadScene("TitleScene");
-        Destroy(gameObject);
+        Destroy(gameObject);    
     }
 }
 

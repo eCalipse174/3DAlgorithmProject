@@ -11,14 +11,15 @@ public class SoundManager : MonoBehaviour
     [Header("BGM")]
     public AudioClip[] bgmClips;
     public float bgmVolume;
-    AudioSource bgmPlayer;
+    private AudioSource bgmPlayer;
+    private Bgm currentBgm;
 
     [Header("SFX")]
     public AudioClip[] sfxClips;
     public float sfxVolume;
     public int channels;
     private int channelIndex;
-    AudioSource[] sfxPlayers;
+    private AudioSource[] sfxPlayers;
 
     public const string MIXER_BGM = "BGM";
     public const string MIXER_SFX = "SFX";
@@ -43,6 +44,14 @@ public class SoundManager : MonoBehaviour
         Hurt,
         DieEnemy,
     }
+
+    public enum Bgm
+    {
+        Title,
+        Battle,
+        Noise,
+    }
+
     public static SoundManager Instance
     {
         get
@@ -74,6 +83,7 @@ public class SoundManager : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        ChangeBGM(Bgm.Title);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -83,7 +93,8 @@ public class SoundManager : MonoBehaviour
             player.Stop();
         }
 
-        ChangeBGM(scene.buildIndex);
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+            ChangeBGM(Bgm.Title);
     }
 
     private void Init()
@@ -110,13 +121,15 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    private void ChangeBGM(int sceneIndex)
+    public void ChangeBGM(Bgm bgm)
     {
-        if (sceneIndex == 4) bgmPlayer.Stop();
-        if (sceneIndex > 3) return;
+        //if (bgm == currentBgm)
+            //return;
+
+        currentBgm = bgm;
 
         bgmPlayer.Stop();
-        bgmPlayer.clip = bgmClips[sceneIndex];
+        bgmPlayer.clip = bgmClips[(int)bgm];
         bgmPlayer.Play();
     }
 

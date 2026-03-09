@@ -32,6 +32,11 @@ public class PlayerRunning : PlayerStateBase
             PlayerStateMachine.ChangeState(PlayerState.Walking);
         }
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            PlayerStateMachine.ChangeState(PlayerState.FirstSkill);
+        }
+
         if (Input.GetButtonDown("Jump"))
         {
             PlayerMovement.Jump();

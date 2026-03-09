@@ -15,6 +15,13 @@ public class BehaviourInfo : ScriptableObject
     [SerializeField] private float comboWaitingTime;
     [SerializeField] private float stopTime;
 
+    [Space]
+    [Header("Camera")]
+
+    [SerializeField] private AnimationCurve cameraCurve;
+    [SerializeField] private float zoomDuration;
+    [SerializeField] private float zoomPower;
+
 
     [Space]
     [Header("Hit")]
@@ -22,6 +29,7 @@ public class BehaviourInfo : ScriptableObject
     [SerializeField] private float areaRadius;
     [SerializeField] private float effectDelay;
     [SerializeField] private float knockbackForce;
+    [SerializeField] private float hitStopDuration;
     [SerializeField] private List<int> hits;
 
 
@@ -41,8 +49,13 @@ public class BehaviourInfo : ScriptableObject
     /// </summary>
     public float StopTime => stopTime;
 
+    public AnimationCurve CameraCurve => cameraCurve;
+    public float ZoomDuration => zoomDuration;
+    public float ZoomPower => zoomPower;
+
     public float AreaRadius => areaRadius;
     public float EffectDelay => effectDelay;
+    public float HitStopDuration => hitStopDuration;
     public float KnockbackForce => knockbackForce;
     public List<int> Hits => hits;
 }

@@ -97,7 +97,7 @@ public class UIManager : MonoBehaviour
 
     private IEnumerator ShowBlack()
     {
-        float duration = 0.5f;
+        float duration = 0.7f;
         Color color = m_black.color;
         float elapsed = 0f;
 

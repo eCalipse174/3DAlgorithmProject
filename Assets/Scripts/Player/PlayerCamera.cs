@@ -25,6 +25,11 @@ public class PlayerCamera : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    private void Start()
+    {
+        m_cameraDistance = m_3rdPersonFollow.CameraDistance;
+    }
+
     private void Update()
     {
         float mouseX = Input.GetAxisRaw("Mouse X");
@@ -72,12 +77,32 @@ public class PlayerCamera : MonoBehaviour
         m_followTarget.transform.position = originPos;
     }
 
-    public IEnumerator Zoom(AnimationCurve curve)
+    public void ZoomCamera(AnimationCurve curve, float duration, float power)
     {
-        yield return null;
+        StartCoroutine(Zoom(curve, duration, power));
+    }
+
+    private IEnumerator Zoom(AnimationCurve curve, float duration, float power)
+    {
+        Debug.Log("Zoom");
 
         float originDistance = m_cameraDistance;
         float elapsed = 0;
+
+        while (elapsed < duration)
+        {
+            float t = elapsed / duration;
+
+            float value = curve.Evaluate(t);
+            Debug.Log(value);
+
+            m_3rdPersonFollow.CameraDistance = originDistance + value * power;
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        m_3rdPersonFollow.CameraDistance = originDistance;
     }
 
     public float GetCameraAngle()

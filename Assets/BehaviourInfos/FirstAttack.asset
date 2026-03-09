@@ -61,4 +61,5 @@ MonoBehaviour:
   areaRadius: 3
   effectDelay: 0.2
   knockbackForce: 15
+  hitStopDuration: 0
   hits: 64000000
