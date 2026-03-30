@@ -9,11 +9,13 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance { get { return instance; } }
 
     private Image m_hpGauge;
+    private Image m_skillCooltimeGauge;
     private Text m_stageText;
 
     private Image m_black;
 
     private float m_currentHpRatio;
+    private float m_currentSkillRatio;
     private int m_currentStage;
 
     private bool m_isFading;
@@ -35,6 +37,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         m_currentHpRatio = 1;
+        m_currentSkillRatio = 1;
         m_currentStage = 0;
         m_isGame = true;
 
@@ -62,9 +65,11 @@ public class UIManager : MonoBehaviour
 
         m_black = GameObject.Find("Black").GetComponent<Image>();
         m_hpGauge = GameObject.Find("HpGauge").GetComponent<Image>();
+        m_skillCooltimeGauge = GameObject.Find("SkillCooltimeGauge").GetComponent<Image>();
         m_stageText = GameObject.Find("CurrentStageText").GetComponent<Text>();
 
         ShowHp(m_currentHpRatio);
+        ShowSkillCooltime(m_currentSkillRatio);
         ShowStage(m_currentStage);
 
         StartCoroutine(HideBlack());
@@ -79,6 +84,12 @@ public class UIManager : MonoBehaviour
     {
         m_currentHpRatio = pRatio;
         m_hpGauge.fillAmount = pRatio;
+    }
+
+    public void ShowSkillCooltime(float pRatio)
+    {
+        m_currentSkillRatio = pRatio;
+        m_skillCooltimeGauge.fillAmount = 1 - pRatio;
     }
 
     public void ShowStage(int pStage)
@@ -106,6 +117,12 @@ public class UIManager : MonoBehaviour
 
         while (elapsed < duration)
         {
+            if (PauseManager.Instance.IsPause)
+            {
+                yield return null;
+                continue;
+            }
+
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / duration);
 
@@ -134,6 +151,12 @@ public class UIManager : MonoBehaviour
 
         while (elapsed < duration)
         {
+            if (PauseManager.Instance.IsPause)
+            {
+                yield return null;
+                continue;
+            }
+
             elapsed += Time.deltaTime;
             float t = 1 - Mathf.Clamp01(elapsed / duration);
 

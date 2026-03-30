@@ -23,13 +23,14 @@ public class PlayerWalking : PlayerStateBase
         if (Input.GetKeyDown(KeyCode.Mouse0))
             PlayerStateMachine.ChangeState(PlayerState.FirstAttack);
 
-        if (Input.GetButtonDown("Dash"))
+        if (Input.GetButton("Dash"))
         {
             //PlayerMovement.Dash();
             PlayerStateMachine.ChangeState(PlayerState.Running);
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) &&
+            PlayerBattle.SkillLateTime >= PlayerBattle.SkillCoolTime)
         {
             PlayerStateMachine.ChangeState(PlayerState.FirstSkill);
         }

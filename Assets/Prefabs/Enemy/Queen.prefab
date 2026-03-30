@@ -325,7 +325,7 @@ Transform:
   m_GameObject: {fileID: 2119218025768786848}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7da9cfdafd29649ab6d1c705c4d136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyQueenStat
-  m_maxHp: 3000
+  m_maxHp: 3500
   m_flinchTime: 0
   m_hurtEffect: {fileID: 4938560131730452997}
 --- !u!114 &570428232607420332

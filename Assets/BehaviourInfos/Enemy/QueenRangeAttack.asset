@@ -22,7 +22,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   distance: 0
   duration: 0.7
-  areaRadius: 4.5
+  areaRadius: 5
   effectDelay: 0
   hits: 5e010000
   afterDelay: 0.1

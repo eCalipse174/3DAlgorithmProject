@@ -20,15 +20,6 @@ public class Setting : MonoBehaviour
     public Slider bgmSlider;
     public Slider sfxSlider;
 
-    public Image bgmButton;
-    public Image sfxButton;
-
-    [Header("MuteButton Sprites")]
-    public Sprite SFXButtonSprite;
-    public Sprite SFXButtonMutedSprite;
-    public Sprite BGMButtonSprite;
-    public Sprite BGMButtonMutedSprite;
-
     private void Awake()
     {
         bgmSlider.onValueChanged.AddListener(SetBGMVolume);
@@ -38,21 +29,37 @@ public class Setting : MonoBehaviour
     private void Start()
     {
         audioMixer = SoundManager.Instance.audioMixer;
+
+        bgmVolume = PlayerPrefs.GetFloat("BGMVolume", 1f);
+        sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
+
+        bgmSlider.value = bgmVolume;
+        sfxSlider.value = sfxVolume;
     }
 
 
     private void SetBGMVolume(float value)
     {
         bgmVolume = value;
+        PlayerPrefs.SetFloat("BGMVolume", value);
+
         if (!isBGMMute)
-            audioMixer.SetFloat(MIXER_BGM, Mathf.Log10(value) * 20);
+        {
+            float v = Mathf.Clamp(value, 0.0001f, 1f);
+            audioMixer.SetFloat(MIXER_BGM, Mathf.Log10(v) * 20);
+        }
     }
 
     private void SetSFXVolume(float value)
     {
         sfxVolume = value;
+        PlayerPrefs.SetFloat("SFXVolume", value);
+
         if (!isSFXMute)
-            audioMixer.SetFloat(MIXER_SFX, Mathf.Log10(value) * 20);
+        {
+            float v = Mathf.Clamp(value, 0.0001f, 1f);
+            audioMixer.SetFloat(MIXER_SFX, Mathf.Log10(v) * 20);
+        }
     }
 
     public void SetBGMMute()
@@ -62,14 +69,12 @@ public class Setting : MonoBehaviour
             isBGMMute = true;
             audioMixer.SetFloat(MIXER_BGM, Mathf.Log10(0.0001f) * 20);
 
-            bgmButton.sprite = BGMButtonMutedSprite;
         }
         else
         {
             isBGMMute = false;
             audioMixer.SetFloat(MIXER_BGM, Mathf.Log10(bgmVolume) * 20);
 
-            bgmButton.sprite = BGMButtonSprite;
         }
     }
 
@@ -80,14 +85,12 @@ public class Setting : MonoBehaviour
             isSFXMute = true;
             audioMixer.SetFloat(MIXER_SFX, Mathf.Log10(0.0001f) * 20);
 
-            sfxButton.sprite = SFXButtonMutedSprite;
         }
         else
         {
             isSFXMute = false;
             audioMixer.SetFloat(MIXER_SFX, Mathf.Log10(sfxVolume) * 20);
 
-            sfxButton.sprite = SFXButtonSprite;
         }
     }
 

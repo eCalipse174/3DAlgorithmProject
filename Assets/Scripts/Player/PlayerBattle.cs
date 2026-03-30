@@ -5,6 +5,11 @@ public class PlayerBattle : MonoBehaviour, ICoroutineHost
 {
     private Dictionary<PlayerState, Transform> m_hitTransforms;
 
+    [SerializeField] private float m_skillCooltime = 3f;
+    private float m_skillLateTime;
+    public float SkillCoolTime => m_skillCooltime;
+    public float SkillLateTime => m_skillLateTime; 
+
     private void Start()
     {
         m_hitTransforms = new Dictionary<PlayerState, Transform>();
@@ -13,6 +18,19 @@ public class PlayerBattle : MonoBehaviour, ICoroutineHost
         m_hitTransforms.Add(PlayerState.ThirdAttack, GameObject.Find(PlayerState.ThirdAttack.ToString() + "Transform").transform);
 
         m_hitTransforms.Add(PlayerState.FirstSkill, GameObject.Find(PlayerState.FirstSkill.ToString() + "Transform").transform);
+
+        m_skillLateTime = m_skillCooltime;
+    }
+
+    private void Update()
+    {
+        m_skillLateTime += Time.deltaTime;
+        UIManager.Instance.ShowSkillCooltime(m_skillLateTime / 3);
+    }
+
+    public void UseSkill()
+    {
+        m_skillLateTime = 0;
     }
 
     public void Hit(BehaviourInfo pInfo, int pHitIndex)

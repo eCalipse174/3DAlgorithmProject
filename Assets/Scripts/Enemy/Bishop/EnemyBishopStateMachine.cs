@@ -6,6 +6,7 @@ public enum BishopState
     Idle,
     Shot,
     GoBack,
+    WaitBack,
 }
 
 public class EnemyBishopStateMachine : StateControllerBase<BishopState>
@@ -19,6 +20,7 @@ public class EnemyBishopStateMachine : StateControllerBase<BishopState>
         stateByKey.Add(BishopState.Idle, new EnemyBishopIdle(this, 3, 2));
         stateByKey.Add(BishopState.Shot, new EnemyBishopShot(this, m_behaviourInfos[(int)BishopState.Shot]));
         stateByKey.Add(BishopState.GoBack, new EnemyBishopGoBack(this, m_behaviourInfos[(int)BishopState.GoBack]));
+        stateByKey.Add(BishopState.WaitBack, new EnemyBishopWaitBack(this, 0.3f));
 
         return stateByKey;
     }

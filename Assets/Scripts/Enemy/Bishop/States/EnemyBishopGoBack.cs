@@ -51,6 +51,6 @@ public class EnemyBishopGoBack : EnemyBishopStateBase
 
         m_transform.position = pTargetPos;
 
-        BishopStateMachine.ChangeState(BishopState.Idle);
+        BishopStateMachine.ChangeState(BishopState.Shot);
     }
 }

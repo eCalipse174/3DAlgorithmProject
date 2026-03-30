@@ -12,6 +12,7 @@ public class PlayerFirstSkill : PlayerStateBase
     {
         PlayerMovement.SetIsAttacking(true);
         PlayerAnimator.SetTrigger(PlayerState.FirstSkill.ToString());
+        PlayerBattle.UseSkill();
         Attack();
     }
 

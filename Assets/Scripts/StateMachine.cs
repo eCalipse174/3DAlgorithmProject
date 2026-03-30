@@ -11,6 +11,9 @@ public class StateMachine
 
     public void ChangeState(IState pNewState)
     {
+        if (PauseManager.Instance.IsPause)
+            return;
+
         if (m_currentState != null)
             m_currentState.Exit();
         m_currentState = pNewState;

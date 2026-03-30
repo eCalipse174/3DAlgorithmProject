@@ -51,6 +51,6 @@ public class EnemyQueenBackStep : EnemyQueenStateBase
 
         m_transform.position = pTargetPos;
 
-        QueenStateMachine.ChangeState(QueenState.Idle);
+        QueenStateMachine.ChangeState(QueenState.ComboAttack);
     }
 }

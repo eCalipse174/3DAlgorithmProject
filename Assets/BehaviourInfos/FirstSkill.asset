@@ -101,9 +101,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   zoomDuration: 1.3
-  zoomPower: 2.5
+  zoomPower: 3
   areaRadius: 7
   effectDelay: 0.25
   knockbackForce: 50
-  hitStopDuration: 0.1
+  hitStopDuration: 0.16
   hits: 90010000

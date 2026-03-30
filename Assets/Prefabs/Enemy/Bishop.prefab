@@ -504,7 +504,8 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: d2598094b4a7f07438df246892e64d27, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6400000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 400000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
@@ -535,6 +536,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7920829058876130927}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6245937746711075885}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2591823283799595531}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3284568365785106085}
   m_SourcePrefab: {fileID: 100100000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}
 --- !u!1 &4311883543964337018 stripped
 GameObject:
@@ -581,7 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd17485d22272843a2848c89f58f5ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStat
-  m_maxHp: 500
+  m_maxHp: 700
   m_flinchTime: 0
   m_hurtEffect: {fileID: 6259587280351254555}
 --- !u!114 &7920829058876130927
@@ -598,6 +608,69 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHpBar
   fill: {fileID: 4603254687758337332}
   hpBar: {fileID: 4860547170250671186}
+--- !u!114 &6245937746711075885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4311883543964337018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b0d63f52a7fa24eba5428cb438938c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyKnockback
+  m_knockbackDuration: 0.1
+--- !u!54 &2591823283799595531
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4311883543964337018}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
+--- !u!136 &3284568365785106085
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4311883543964337018}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5806281
+  m_Height: 2.5846941
+  m_Direction: 1
+  m_Center: {x: -0.00000017881393, y: 1.1201159, z: -0.017778188}
 --- !u!4 &4311883543964770138 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1e1130c2d0732f44eb82b057a9dcf58b, type: 3}

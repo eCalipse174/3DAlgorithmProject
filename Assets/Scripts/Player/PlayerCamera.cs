@@ -32,6 +32,10 @@ public class PlayerCamera : MonoBehaviour
 
     private void Update()
     {
+        if (PauseManager.Instance != null &&
+            PauseManager.Instance.IsPause)
+            return;
+
         float mouseX = Input.GetAxisRaw("Mouse X");
         float mouseY = -Input.GetAxisRaw("Mouse Y");
 
@@ -65,6 +69,12 @@ public class PlayerCamera : MonoBehaviour
 
         while (elapsed < pDuration)
         {
+            if (PauseManager.Instance.IsPause)
+            {
+                yield return null;
+                continue;
+            }
+
             float x = Random.Range(-1, 1) * pMagnitude;
             float y = Random.Range(-1, 1) * pMagnitude;
 
@@ -89,6 +99,12 @@ public class PlayerCamera : MonoBehaviour
 
         while (elapsed < duration)
         {
+            if (PauseManager.Instance.IsPause)
+            {
+                yield return null;
+                continue;
+            }
+
             float t = elapsed / duration;
 
             float value = curve.Evaluate(t);

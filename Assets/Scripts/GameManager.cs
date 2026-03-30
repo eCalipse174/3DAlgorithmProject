@@ -99,6 +99,7 @@ public class GameManager : MonoBehaviour
 
         SceneManager.sceneLoaded -= UIManager.Instance.OnSceneLoaded;
         UIManager.Instance.DestroyInstance();
+        PauseManager.Instance.DestroyInstance();
         instance = null;
         SceneManager.LoadScene("TitleScene");
         Destroy(gameObject);    

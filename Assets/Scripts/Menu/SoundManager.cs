@@ -119,6 +119,18 @@ public class SoundManager : MonoBehaviour
             sfxPlayers[i].volume = sfxVolume;
             sfxPlayers[i].outputAudioMixerGroup = audioMixer.FindMatchingGroups(MIXER_SFX)[0];
         }
+
+        float bgm = PlayerPrefs.GetFloat("BGMVolume", 1f);
+        float sfx = PlayerPrefs.GetFloat("SFXVolume", 1f);
+
+        ApplyVolume("BGMVolume", bgm);
+        ApplyVolume("SFXVolume", sfx);
+    }
+
+    private void ApplyVolume(string param, float value)
+    {
+        float v = Mathf.Clamp(value, 0.0001f, 1f);
+        audioMixer.SetFloat(param, Mathf.Log10(v) * 20);
     }
 
     public void ChangeBGM(Bgm bgm)

@@ -30,6 +30,6 @@ public class EnemyBishopShot : EnemyBishopStateBase
 
         yield return new WaitForSeconds(Info.Duration);
         yield return new WaitForSeconds(Info.AfterDelay);
-        BishopStateMachine.ChangeState(BishopState.Idle);
+        BishopStateMachine.ChangeState(BishopState.WaitBack);
     }
 }

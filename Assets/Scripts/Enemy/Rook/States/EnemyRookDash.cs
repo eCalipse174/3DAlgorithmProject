@@ -27,7 +27,6 @@ public class EnemyRookDash : EnemyRookStateBase
         Vector3 adjustedTarget = targetPos - dir * m_stopDistance;
         adjustedTarget.y = 0;
 
-        RookBattle.PlayEffect(0);
         RookBattle.StartCoroutine(ChaseRoutine(adjustedTarget));
         SoundManager.Instance.PlaySfx(SoundManager.Sfx.Rook);
 

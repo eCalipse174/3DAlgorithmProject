@@ -4,7 +4,8 @@ using UnityEngine;
 public enum RookState
 {
     Idle,
-    Dash
+    Dash,
+    Charge,
 }
 
 public class EnemyRookStateMachine : StateControllerBase<RookState>
@@ -15,8 +16,9 @@ public class EnemyRookStateMachine : StateControllerBase<RookState>
     {
         var stateByKey = new Dictionary<RookState, IState>();
 
-        stateByKey.Add(RookState.Idle, new EnemyRookIdle(this, 5));
+        stateByKey.Add(RookState.Idle, new EnemyRookIdle(this, 3.5f));
         stateByKey.Add(RookState.Dash, new EnemyRookDash(this, m_behaviourInfos[(int)RookState.Dash], -10));
+        stateByKey.Add(RookState.Charge, new EnemyRookCharge(this, 0.5f));
 
         return stateByKey;
     }

@@ -28,7 +28,7 @@ public class EnemyRookIdle : EnemyRookStateBase
 
         if (m_time > m_IdleTime)
         {
-            RookStateMachine.ChangeState(RookState.Dash);
+            RookStateMachine.ChangeState(RookState.Charge);
         }
     }
 }
