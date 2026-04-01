@@ -39,4 +39,9 @@ public class PausePopup : MonoBehaviour
         Time.timeScale = 1f;
         GameManager.Instance.EndGame();
     }
+
+    public void DestroyInstance()
+    {
+        Destroy(gameObject);
+    }
 }

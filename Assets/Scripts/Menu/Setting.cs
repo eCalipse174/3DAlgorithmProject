@@ -17,13 +17,18 @@ public class Setting : MonoBehaviour
     bool isBGMMute = false;
     bool isSFXMute = false;
 
+    float sensitivity = 1.0f;
+
     public Slider bgmSlider;
     public Slider sfxSlider;
+
+    public Slider sensitivitySlider;
 
     private void Awake()
     {
         bgmSlider.onValueChanged.AddListener(SetBGMVolume);
         sfxSlider.onValueChanged.AddListener(SetSFXVolume);
+        sensitivitySlider.onValueChanged.AddListener(SetSensitivity);
     }
 
     private void Start()
@@ -32,9 +37,11 @@ public class Setting : MonoBehaviour
 
         bgmVolume = PlayerPrefs.GetFloat("BGMVolume", 1f);
         sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        sensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 1.0f);
 
         bgmSlider.value = bgmVolume;
         sfxSlider.value = sfxVolume;
+        sensitivitySlider.value = sensitivity;
     }
 
 
@@ -92,6 +99,11 @@ public class Setting : MonoBehaviour
             audioMixer.SetFloat(MIXER_SFX, Mathf.Log10(sfxVolume) * 20);
 
         }
+    }
+
+    public void SetSensitivity(float value)
+    {
+        GameObject.Find("Player").GetComponent<PlayerCamera>().SetSensitivity(value);
     }
 
     public void BackToMenu()

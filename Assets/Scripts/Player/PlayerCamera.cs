@@ -15,6 +15,8 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] private CinemachineThirdPersonFollow m_3rdPersonFollow;
     [SerializeField] private CinemachineImpulseSource m_impulseSource;
 
+    private float m_mouseSensitivity = 1.0f;
+
     private float m_cameraTargetYaw;
     private float m_cameraTargetPitch;
 
@@ -28,6 +30,7 @@ public class PlayerCamera : MonoBehaviour
     private void Start()
     {
         m_cameraDistance = m_3rdPersonFollow.CameraDistance;
+        m_mouseSensitivity = PlayerPrefs.GetFloat("MouseSensitivity", 1.0f);
     }
 
     private void Update()
@@ -36,8 +39,8 @@ public class PlayerCamera : MonoBehaviour
             PauseManager.Instance.IsPause)
             return;
 
-        float mouseX = Input.GetAxisRaw("Mouse X");
-        float mouseY = -Input.GetAxisRaw("Mouse Y");
+        float mouseX = Input.GetAxisRaw("Mouse X") * m_mouseSensitivity * Time.deltaTime * 400f;
+        float mouseY = -Input.GetAxisRaw("Mouse Y") * m_mouseSensitivity * Time.deltaTime * 400f;
 
         m_cameraTargetPitch += mouseY;
         m_cameraTargetYaw += mouseX;
@@ -120,4 +123,10 @@ public class PlayerCamera : MonoBehaviour
 
     public float GetCameraAngle()
         => m_followTarget.transform.eulerAngles.y;
+
+    public void SetSensitivity(float value)
+    {
+        m_mouseSensitivity = value;
+        PlayerPrefs.SetFloat("MouseSensitivity", value);
+    }
 }
