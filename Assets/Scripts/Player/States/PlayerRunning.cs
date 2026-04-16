@@ -32,7 +32,8 @@ public class PlayerRunning : PlayerStateBase
             PlayerStateMachine.ChangeState(PlayerState.Walking);
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) &&
+            PlayerBattle.SkillLateTime >= PlayerBattle.SkillCoolTime)
         {
             PlayerStateMachine.ChangeState(PlayerState.FirstSkill);
         }
